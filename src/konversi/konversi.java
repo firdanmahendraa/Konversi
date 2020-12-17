@@ -1,39 +1,35 @@
 package konversi;
 import java.util.Scanner;
-/**
- *
- * @author Anonim
- */
+
 public class konversi {
     
     public static void main(String[] args) {
         
-        
         System.out.println("Pilihan Konversi:\n"
                             + " 1. Jam -> Menit\n"
                             + " 2. Detik -> Hari, Jam, Menit, dan Detik");
-        System.out.println("\nMasukkan pilihan");
+        System.out.print("\nMasukkan pilihan: ");
     try (Scanner options = new Scanner(System.in)){
         if (!options.hasNextInt()){
-            System.out.println("Itu alfabet, anda salah!!!");
+            System.out.println("Itu alfabet, anda salah!!!!");
         } else {
             if (options.nextInt() ==1){
-                System.out.println("Masukkan jam :");
+                System.out.print("Masukkan jam : ");
                 Scanner hours = new Scanner(System.in);
                 jamKeMenit(hours.nextInt());
             } else{
-                System.out.println("Masukkan detik :");
+                System.out.print("Masukkan detik : ");
                 try (Scanner seconds = new Scanner(System.in)){
                 detikKeHari (seconds.nextLong());
+                    }   
                 }
             }
         }
     }
-    }
 
     private static void jamKeMenit(long jam) {
         long menit = jam * 60;
-        System.out.println("Menit : " + menit);
+        System.out.println(jam+" jam = " + menit + " menit");
     }
 
     private static void detikKeHari(long detik) {
@@ -51,11 +47,11 @@ public class konversi {
         //detik
         detik %= 60;
         
-        System.out.println(hari + " hari, " + jam + " jam, " + menit + " menit, " + detik + " detik");
-        
+        System.out.println( + hari + " hari, " 
+                            + jam + " jam, " 
+                            + menit + " menit, " 
+                            + detik + " detik");
+        }
     }
-
-   
-}
 
 
